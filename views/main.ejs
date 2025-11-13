@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/output.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module" defer></script>
+    <title>Scientific Horizons</title>
+  </head>
+  <body>
+    <header class="p-4 shadow-sm bg-white/20 backdrop-blur-lg">
+    <nav class="p-2 flex justify-between items-center">
+       <h1 class=" hidden font-stack sm:flex text-xl justify-center sm:text-2xl font-stackitems-center space-x-6">
+        Scientific Horizons Club
+        <svg class="w-8 h-8 sm:w-10 sm:h-10" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" fill="#000000"><path d="M407.23-250v-50.26h55.13l121.31-139.33-121.31-140.15h-75.44L319.54-233q-9.54 50.9-34.55 76.95Q259.97-130 219.95-130q-38.1 0-63.08-21.69-24.97-21.7-24.97-55.57 0-24.43 13.04-39.5 13.03-15.06 33.98-15.06 18.87 0 31.46 11.87t12.59 30.13q0 11.05-5.47 19.81-5.48 8.75-14.09 12.88 3.56 2.75 9.38 4.63 5.82 1.89 12.36 1.89 17.13-.21 28.08-15.43 10.95-15.22 17.1-44.94l65.77-338.76H213.85V-630H345.1l20.23-105.59q8.85-45.36 34.2-69.88Q424.87-830 463.1-830q37.9 0 62.59 22.17 24.69 22.16 24.69 55.83 0 24.28-13.16 39.22-13.17 14.93-34.12 14.93-18.46 0-31.25-11.47-12.8-11.48-12.8-29.27 0-10.38 5.27-19.27 5.27-8.88 13.45-12.76-3-3.38-9.06-5.53-6.07-2.16-12.2-2.16-15.66.16-26.39 13.85-10.74 13.69-15.48 38.13L396.97-630H580.2v50.26h-51.1l88.95 102.38 86.64-102.38h-51.77V-630h173.23v50.26h-54.71L650.79-439.59l121.03 139.33h54.33V-250H652.92v-50.26h51.77l-87.46-101.1-88.54 101.1h51.51V-250H407.23Z"/></svg>
+      
+      </h1>
+      <svg class="block sm:hidden w-10 h-10" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" fill="#000000"><path d="M407.23-250v-50.26h55.13l121.31-139.33-121.31-140.15h-75.44L319.54-233q-9.54 50.9-34.55 76.95Q259.97-130 219.95-130q-38.1 0-63.08-21.69-24.97-21.7-24.97-55.57 0-24.43 13.04-39.5 13.03-15.06 33.98-15.06 18.87 0 31.46 11.87t12.59 30.13q0 11.05-5.47 19.81-5.48 8.75-14.09 12.88 3.56 2.75 9.38 4.63 5.82 1.89 12.36 1.89 17.13-.21 28.08-15.43 10.95-15.22 17.1-44.94l65.77-338.76H213.85V-630H345.1l20.23-105.59q8.85-45.36 34.2-69.88Q424.87-830 463.1-830q37.9 0 62.59 22.17 24.69 22.16 24.69 55.83 0 24.28-13.16 39.22-13.17 14.93-34.12 14.93-18.46 0-31.25-11.47-12.8-11.48-12.8-29.27 0-10.38 5.27-19.27 5.27-8.88 13.45-12.76-3-3.38-9.06-5.53-6.07-2.16-12.2-2.16-15.66.16-26.39 13.85-10.74 13.69-15.48 38.13L396.97-630H580.2v50.26h-51.1l88.95 102.38 86.64-102.38h-51.77V-630h173.23v50.26h-54.71L650.79-439.59l121.03 139.33h54.33V-250H652.92v-50.26h51.77l-87.46-101.1-88.54 101.1h51.51V-250H407.23Z"/></svg>
+      <button class="sm:hidden" command="show-modal" commandfor="drawer" class="rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20">
+         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#000000"><path d="M120-240v-66.67h720V-240H120Zm0-206.67v-66.66h720v66.66H120Zm0-206.66V-720h720v66.67H120Z"/></svg>
+      </button>
+   <el-dialog class="absolute sm:hidden">
+  <dialog id="drawer" aria-labelledby="drawer-title" class="fixed inset-0 size-auto max-h-none max-w-none overflow-hidden bg-transparent not-open:hidden backdrop:bg-transparent">
+    <el-dialog-backdrop class="absolute inset-0 bg-gray-900/50 transition-opacity duration-500 ease-in-out data-closed:opacity-0"></el-dialog-backdrop>
+
+    <div tabindex="0" class="absolute inset-0 pl-10 focus:outline-none sm:pl-16">
+      <el-dialog-panel class="group/dialog-panel relative ml-auto block size-full max-w-md transform transition duration-500 ease-in-out data-closed:translate-x-full sm:duration-700">
+        <!-- Close button, show/hide based on slide-over state. -->
+        <div class="absolute top-0 left-0 -ml-8 flex pt-4 pr-2 duration-500 ease-in-out group-data-closed/dialog-panel:opacity-0 sm:-ml-10 sm:pr-4">
+          <button type="button" command="close" commandfor="drawer" class="relative rounded-md text-gray-800 hover:text-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+            <span class="absolute -inset-2.5"></span>
+            <span class="sr-only">Close panel</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+              <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="relative flex h-full flex-col overflow-y-auto bg-gray-100 py-6 shadow-xl after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-white/10">
+          <div class="px-4 sm:px-6">
+            <h2 id="drawer-title" class="text-base font-semibold text-gray-800">Menu</h2>
+          </div>
+          <div class="relative mt-6 flex-1 px-4 sm:px-6 text-sm ">
+            <% if(locals.user) { %>
+            <a class="flex items-center space-x-2 w-full py-2 px-4 border-2 border-gray-300 rounded focus:outline-2 focus:outline-blue-400" href="/log-out">
+              <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#000000"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+              <span>Log out</span>
+            </a>
+          <% } else { %>
+            <a class="flex items-center space-x-2 w-full py-2 px-4 border-2 border-gray-300 rounded focus:outline-2 focus:outline-pink-400" href="/log-in">
+              <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#000000"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg>
+              <span>Log in</span>
+            </a>
+            <% } %>
+          </div>
+        </div>
+      </el-dialog-panel>
+    </div>
+  </dialog>
+</el-dialog>
+      <div class=" hidden sm:flex px-2 sm:items-center sm:justify-center space-x-4">
+       <% if (!locals.user) { %>
+         <a class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800" href="/log-in">
+          <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">Log in</span>
+        </a>
+       <% } else { %>
+        <a class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-200" href="/log-out">
+         <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+           Log out
+         </span>
+        </a>
+       <% } %>
+       </div>
+       
+    </nav>
+    </header>
+    
+
+    <main class="p-6">
+      <h2 class="text-3xl font-medium my-4 bg-gradient-to-r from-blue-500 to-orange-400 bg-clip-text text-transparent">Posts</h2>
+      <% if (locals.user) { %>
+        <a class="px-4 mb-4 inline-block py-2 rounded-xl border-2 border-b-8 hover:border-b-2 focus:border-b-2 transition-all duration-200 ease-in shadow-lg hover:shadow-none focus:shadow-none" href="/new-post">Add new post</a>
+      <% } %>
+      <section class="flex flex-col items-center justify-start w-full py-8 space-y-6">
+  <% posts.map(post => { %>
+    <% if (locals.user && post.author_id === locals.user.id) { %>
+      <div class="w-full max-w-3xl flex justify-end px-4">
+        <div class="relative bg-blue-100 text-blue-900 rounded-xl shadow-lg p-6 w-fit max-w-md border border-blue-300">
+          <div class="absolute bottom-3 right-[-10px] w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[10px] border-l-blue-100"></div>
+               
+          <h2 class="text-sm font-semibold text-right text-blue-600 mb-2 font-condensed">You</h2>
+          <h3 class="text-xl font-bold mb-2 font-stack"><%= post.title %></h3>
+          <p class="text-base mb-2 font-roboto"><%= post.content %></p>
+          <p class="text-xs text-blue-500 text-right font-condensed">
+            <%= new Date(post.date).toLocaleString("en-US", {
+               year: "numeric",
+               month: "short",
+               day: "numeric",
+               hour: "numeric",
+              minute: "2-digit",
+              hour12: true
+            }) %>
+          </p>
+        </div>
+      </div>
+    <% } else { %>
+      <div class="w-full max-w-3xl flex justify-start px-4">
+        <div class="relative bg-white text-gray-800 rounded-xl shadow-lg p-6 w-fit max-w-md border border-gray-200">
+          <div class="absolute bottom-3 left-[-10px] w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[10px] border-r-white"></div>
+
+          <h2 class="text-sm font-semibold text-gray-500 mb-2 font-condensed">
+            <%= locals.user && post.author_id ? `Author: ${post.author}` : 'Anonymous' %>
+          </h2>
+          <h3 class="text-xl font-bold mb-2 font-stack"><%= post.title %></h3>
+          <p class="text-base mb-2 font-roboto"><%= post.content %></p>
+          <p class="text-xs text-gray-400 font-condensed"><%=
+             new Date(post.date).toLocaleString("en-US", {
+               year: "numeric",
+               month: "short",
+               day: "numeric",
+               hour: "numeric",
+              minute: "2-digit",
+              hour12: true
+            }) 
+            %></p>
+        </div>
+      </div>
+    <% } %>
+  <% }) %>
+</section>
+    
+    </main>
+    <footer class="mt-12 border-t border-gray-300 bg-white/30 backdrop-blur-lg p-6 text-center text-sm text-gray-700">
+  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-4 sm:space-y-0">
+    <!-- Buttons -->
+    
+    <!-- Attribution -->
+    <div class="w-full flex flex-col items-center sm:text-right">
+      <p class="font-medium">Mohammed Milly</p>
+      <p class="text-xs text-gray-500">&copy; <%= new Date().getFullYear() %> Scientific Horizons Club.</p>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
+
+
+

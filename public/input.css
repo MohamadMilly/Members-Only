@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+@theme {
+  --font-stack: "Stack Sans Notch", sans-serif;
+}

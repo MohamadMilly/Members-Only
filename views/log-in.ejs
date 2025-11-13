@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-50">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific Horizons Club – Log In</title>
+    <link rel="stylesheet" href="/output.css">
+  </head>
+  <body class="h-full">
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm text-center">
+        <div class="flex flex-col items-center space-y-3 sm:justify-center sm:items-center sm:space-x-3 sm:flex-row sm:space-y-0">
+          <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 -960 960 960" width="40" fill="#4f46e5">
+            <path d="M407.23-250v-50.26h55.13l121.31-139.33-121.31-140.15h-75.44L319.54-233q-9.54 50.9-34.55 76.95Q259.97-130 219.95-130q-38.1 0-63.08-21.69-24.97-21.7-24.97-55.57 0-24.43 13.04-39.5 13.03-15.06 33.98-15.06 18.87 0 31.46 11.87t12.59 30.13q0 11.05-5.47 19.81-5.48 8.75-14.09 12.88 3.56 2.75 9.38 4.63 5.82 1.89 12.36 1.89 17.13-.21 28.08-15.43 10.95-15.22 17.1-44.94l65.77-338.76H213.85V-630H345.1l20.23-105.59q8.85-45.36 34.2-69.88Q424.87-830 463.1-830q37.9 0 62.59 22.17 24.69 22.16 24.69 55.83 0 24.28-13.16 39.22-13.17 14.93-34.12 14.93-18.46 0-31.25-11.47-12.8-11.48-12.8-29.27 0-10.38 5.27-19.27 5.27-8.88 13.45-12.76-3-3.38-9.06-5.53-6.07-2.16-12.2-2.16-15.66.16-26.39 13.85-10.74 13.69-15.48 38.13L396.97-630H580.2v50.26h-51.1l88.95 102.38 86.64-102.38h-51.77V-630h173.23v50.26h-54.71L650.79-439.59l121.03 139.33h54.33V-250H652.92v-50.26h51.77l-87.46-101.1-88.54 101.1h51.51V-250H407.23Z"/>
+          </svg>
+          <h1 class="text-2xl font-bold text-gray-800">Scientific Horizons Club</h1>
+        </div>
+        <h2 class="mt-6 text-center text-xl font-semibold text-gray-700">Log in to your account</h2>
+      </div>
+
+      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form action="/log-in" method="POST" class="space-y-6">
+          <div>
+            <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+            <input id="username" name="username" type="text" required class="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+
+          <div>
+            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+            <input id="password" name="password" type="password" required class="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+
+          <div>
+            <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              Log In
+            </button>
+          </div>
+        </form>
+
+        <% if (locals.errors) { %>
+          <ul class="mt-6 text-sm text-red-600 space-y-1">
+            <% errors.map(error => { %>
+              <li><%= error %></li>
+            <% }) %>
+          </ul>
+        <% } %>
+
+        <p class="mt-10 text-center text-sm text-gray-600">
+          Don't have an account?
+          <a href="/sign-up" class="font-semibold text-indigo-600 hover:text-indigo-500">Sign up</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
