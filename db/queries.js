@@ -7,7 +7,6 @@ async function getUser(username) {
     [username]
   );
   if (rows.length !== 0) {
-    console.log(rows);
     return rows[0];
   } else {
     return null;

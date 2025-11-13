@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module" defer></script>
     <title>Scientific Horizons</title>
   </head>
-  <body>
+  <body class="min-h-dvh flex flex-col">
     <header class="p-4 shadow-sm bg-white/20 backdrop-blur-lg">
     <nav class="p-2 flex justify-between items-center">
        <h1 class=" hidden font-stack sm:flex text-xl justify-center sm:text-2xl font-stackitems-center space-x-6">
@@ -79,7 +79,7 @@
     </header>
     
 
-    <main class="p-6">
+    <main class="p-6 grow">
       <h2 class="text-3xl font-medium my-4 bg-gradient-to-r from-blue-500 to-orange-400 bg-clip-text text-transparent">Posts</h2>
       <% if (locals.user) { %>
         <a class="px-4 mb-4 inline-block py-2 rounded-xl border-2 border-b-8 hover:border-b-2 focus:border-b-2 transition-all duration-200 ease-in shadow-lg hover:shadow-none focus:shadow-none" href="/new-post">Add new post</a>
@@ -133,7 +133,7 @@
 </section>
     
     </main>
-    <footer class="mt-12 border-t border-gray-300 bg-white/30 backdrop-blur-lg p-6 text-center text-sm text-gray-700">
+    <footer class="mt-auto mt-12 border-t border-gray-300 bg-white/30 backdrop-blur-lg p-6 text-center text-sm text-gray-700">
   <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-4 sm:space-y-0">
     <!-- Buttons -->
     
