@@ -1,7 +1,10 @@
 require("dotenv").config();
 const { Client } = require("pg");
 
-const DATABASE_URL = process.env.DATABASE_URL;
+const dbUrlArg = process.argv[2];
+
+const DATABASE_URL = dbUrlArg || process.env.DATABASE_URL;
+const SSL = dbUrlArg ? { ssl: { rejectUnauthorized: false } } : null;
 
 const members_table_SQL = `
 CREATE TABLE IF NOT EXISTS members (
@@ -43,7 +46,7 @@ async function main() {
   console.log("Seeding ... ");
   const client = new Client({
     connectionString: DATABASE_URL,
-    ssl: { rejectUnauthorized: false },
+    ...SSL,
   });
   await client.connect();
   await client.query(members_table_SQL);

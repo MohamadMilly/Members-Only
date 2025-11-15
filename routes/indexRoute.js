@@ -2,6 +2,7 @@ const express = require("express");
 const indexController = require("../controllers/indexController");
 const validateSignUp = require("../middlewares/validatesignup");
 const validateNewPost = require("../middlewares/validateNewPost");
+const validateAdmin = require("../middlewares/validateAdmin");
 const passport = require("passport");
 
 const indexRouter = express.Router();
@@ -18,6 +19,7 @@ indexRouter.get("/log-out", (req, res, next) => {
   });
 });
 indexRouter.get("/new-post", indexController.newPostGet);
+indexRouter.get("/admin", indexController.administrationGet);
 
 indexRouter.post("/new-post", validateNewPost, indexController.newPostPost);
 
@@ -30,5 +32,6 @@ indexRouter.post(
   })
 );
 indexRouter.post("/sign-up", validateSignUp, indexController.signUpPost);
-
+indexRouter.post("/admin", validateAdmin, indexController.administrationPost);
+indexRouter.post("/delete/:postId", indexController.deletePost);
 module.exports = indexRouter;

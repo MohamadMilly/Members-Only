@@ -24,7 +24,7 @@ async function getPosts(isAuthenticated) {
   if (isAuthenticated) {
     return (
       await pool.query(
-        "SELECT title , content , date , CONCAT(firstname,' ',lastname) AS author , author_id FROM posts LEFT JOIN members ON members.id = posts.author_id"
+        "SELECT posts.id , title , content , date , CONCAT(firstname,' ',lastname) AS author , author_id FROM posts LEFT JOIN members ON members.id = posts.author_id"
       )
     ).rows;
   } else {
@@ -47,10 +47,19 @@ async function addPost(title, content, author_id) {
   );
 }
 
+async function makeAdmin(id) {
+  await pool.query("UPDATE members SET isadmin = true WHERE id = $1", [id]);
+}
+
+async function deletePost(id) {
+  await pool.query("DELETE FROM posts WHERE id = $1", [id]);
+}
 module.exports = {
   getUser,
   getUserById,
   getPosts,
   addUser,
   addPost,
+  makeAdmin,
+  deletePost,
 };

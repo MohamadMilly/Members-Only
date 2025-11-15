@@ -1,6 +1,8 @@
 const db = require("../db/queries");
 const { validationResult, matchedData } = require("express-validator");
 
+require("dotenv").config();
+
 const signUpGet = (req, res) => {
   res.render("sign-up");
 };
@@ -15,6 +17,10 @@ const newPostGet = (req, res) => {
   } else {
     return res.render("new-post");
   }
+};
+
+const administrationGet = (req, res) => {
+  res.render("adminForm");
 };
 
 const mainPostsGet = async (req, res) => {
@@ -52,11 +58,34 @@ const newPostPost = async (req, res) => {
   res.redirect("/");
 };
 
+const administrationPost = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    res.render("adminForm", { errors: errors.array() });
+  } else {
+    await db.makeAdmin(req.user.id);
+    res.redirect("/");
+  }
+};
+
+const deletePost = async (req, res) => {
+  const postId = req.params.postId;
+  if (req.isAuthenticated() && req.user.isadmin) {
+    await db.deletePost(postId);
+    res.redirect("/");
+  } else {
+    res.render("notAuthenicatedPage");
+  }
+};
+
 module.exports = {
   signUpGet,
   logInGet,
   newPostGet,
   mainPostsGet,
+  administrationGet,
   signUpPost,
   newPostPost,
+  administrationPost,
+  deletePost,
 };
