@@ -26,6 +26,7 @@ const administrationGet = (req, res) => {
 const mainPostsGet = async (req, res) => {
   if (req.isAuthenticated()) {
     const postsWithAuthors = await db.getPosts(true);
+    console.log(postsWithAuthors);
     res.render("main", { posts: postsWithAuthors, user: req.user });
   } else {
     const postsWithoutAuthors = await db.getPosts(false);
@@ -70,6 +71,7 @@ const administrationPost = async (req, res) => {
 
 const deletePost = async (req, res) => {
   const postId = req.params.postId;
+  console.log(postId);
   if (req.isAuthenticated() && req.user.isadmin) {
     await db.deletePost(postId);
     res.redirect("/");
