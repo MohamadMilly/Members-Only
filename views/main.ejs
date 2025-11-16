@@ -67,16 +67,13 @@
 </el-dialog>
       <div class=" hidden sm:flex px-2 sm:items-center sm:justify-center space-x-4">
        <% if (!locals.user) { %>
-         <a class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800" href="/log-in">
-          <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">Log in</span>
-        </a>
+         <a class="py-3 px-7 text-base max-h-max bg-indigo-500 text-white rounded-md cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-700" href="/log-in">Log in</a>
        <% } else { %>
-        <a class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-200" href="/log-out">
-         <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-           Log out
-         </span>
-        </a>
+        <a class="py-3 px-7 text-base max-h-max bg-white text-indigo-500 border-2 border-indigo-500 rounded-md cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-700 hover:text-white hover:border-indigo-700" href="/log-out">Log out</a>
        <% } %>
+       <a class="py-3 px-7 text-base max-h-max bg-white text-indigo-500 border-2 border-indigo-500 rounded-md cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-700 hover:text-white hover:border-indigo-700" href="/admin">
+         Administration
+      </a>
        </div>
        
     </nav>
@@ -108,7 +105,7 @@
               hour12: true
             }) %>
           </p>
-          <% if(locals.user.isadmin) { %>
+          <% if(locals.user && locals.user.isadmin) { %>
 <button command="show-modal" commandfor="dialog" class="mt-3 rounded-full bg-red-200/70 p-2.5 text-sm font-semibold hover:bg-red-300/70">
    <svg class="h-6 w-6 fill-red-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M267.33-120q-27.5 0-47.08-19.58-19.58-19.59-19.58-47.09V-740H160v-66.67h192V-840h256v33.33h192V-740h-40.67v553.33q0 27-19.83 46.84Q719.67-120 692.67-120H267.33Zm425.34-620H267.33v553.33h425.34V-740Zm-328 469.33h66.66v-386h-66.66v386Zm164 0h66.66v-386h-66.66v386ZM267.33-740v553.33V-740Z"/></svg>
 </button>
@@ -168,7 +165,7 @@
               hour12: true
             }) 
             %></p>
-            <% if(locals.user.isadmin) { %>
+            <% if(locals.user && locals.user.isadmin) { %>
 <button command="show-modal" commandfor="dialog" class="ml-auto block mt-3 rounded-full bg-red-200/70 p-2.5 text-sm font-semibold hover:bg-red-300/70">
    <svg class="h-6 w-6 fill-red-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M267.33-120q-27.5 0-47.08-19.58-19.58-19.59-19.58-47.09V-740H160v-66.67h192V-840h256v33.33h192V-740h-40.67v553.33q0 27-19.83 46.84Q719.67-120 692.67-120H267.33Zm425.34-620H267.33v553.33h425.34V-740Zm-328 469.33h66.66v-386h-66.66v386Zm164 0h66.66v-386h-66.66v386ZM267.33-740v553.33V-740Z"/></svg>
 </button>
